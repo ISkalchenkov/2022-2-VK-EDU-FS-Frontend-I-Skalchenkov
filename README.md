@@ -1,1 +1,2 @@
 ## *Проекты блока Frontend по курсу "Fullstack-разработка" VK Education 2022*
+- [*hw-1*](https://github.com/ISkalchenkov/2022-2-VK-EDU-FS-Frontend-I-Skalchenkov/tree/master/hw-1) *Функции и тесты*
