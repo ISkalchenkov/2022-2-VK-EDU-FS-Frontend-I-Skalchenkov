@@ -18,6 +18,7 @@ function handleSubmit(event) {
     const message = {
         "text": input.value,
         "time": `${hours}:${minutes}`,
+        "sender": "Ivan",
     };
     createMessageBlock(message);
     saveMessageToLocalStorage(message);
