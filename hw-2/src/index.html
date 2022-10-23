@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Send a message</title>
+        <link rel="stylesheet" href="./index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <button class="back-button">
+                <span class="material-icons">arrow_back</span>
+            </button>
+            <div class="profile">
+                <img class="profile-avatar" src="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg">
+                <div class="profile-info">
+                    <span class="profile-name">Дженнифер</span>
+                    <span class="profile-last-seen">был(-а) 2 часа назад</span>
+                </div>
+            </div>
+            <button class="search-button">
+                <span class="material-icons">search</span>
+            </button>
+            <button class="more-button">
+                <span class="material-icons">more_vert</span>
+            </button>
+        </header>
+        <div class="chat">
+            <div class="message left-side">
+                <div class="message-text">Привет, Джонсон</div>
+                <div class="message-info">
+                    <div class="message-date">14:22</div>
+                    <div class="message-status">
+                        <span class="material-icons">done_all</span>
+                    </div>
+                </div>
+            </div>
+            <div class="message right-side">
+                <div class="message-text">Привет, Дженнифер</div>
+                <div class="message-info">
+                    <div class="message-time">14:22</div>
+                    <div class="message-status">
+                        <span class="material-icons">done_all</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="form" action="/">
+            <input class="form-input" name="message-text" placeholder="Сообщение" type="text">
+            <button class="attach-button" type="button">
+                <span class="material-icons">attachment</span>
+            </button>
+        </form>
+        <script src="./index.js"></script>
+        <!-- <style>
+            .form {
+                width: 100%;
+                display: inline-block;
+                border: 1px solid rgba(25, 25, 25, 0.32);
+            }
+
+            .message {
+                color: red;
+                /* border: 1px solid; */
+                border-radius: 4px;
+                margin: 4px 0;
+                padding: 4px;
+            }
+
+            input[type=submit] {
+                visibility: collapse;
+            }
+
+            input {
+                border: 0;
+                outline: none;
+                width: calc(100% - 2px);
+            }
+        </style>
+        <form class="form" action="/">
+            <div class="message"></div>
+            <input class="form-input" name="message-text" placeholder="Введите сообщение" type="text">
+        </form> -->
+        <!-- <script>
+            const form = document.querySelector('form');
+            const input = document.querySelector('.form-input');
+            const message = document.querySelector('.message');
+
+            form.addEventListener('submit', this.handleSubmit.bind(this));
+            form.addEventListener('keypress', this.handleKeyPress.bind(this));
+
+            function handleSubmit (event) {
+                event.preventDefault();
+                message.innerText = input.value;
+            }
+
+            function handleKeyPress (event) {
+                if (event.keyCode === 13) {
+                    form.dispatchEvent(new Event('submit'));
+                }
+            }
+        </script> -->
+    </body>
+</html>
