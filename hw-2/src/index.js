@@ -13,9 +13,11 @@ function handleSubmit(event) {
         return;
     }
     const now = new Date();
+    const hours = now.getHours();
+    const minutes = ("0" + now.getMinutes()).slice(-2);
     const message = {
         "text": input.value,
-        "time": `${now.getHours()}:${now.getMinutes()}`,
+        "time": `${hours}:${minutes}`,
     };
     createMessageBlock(message);
     saveMessageToLocalStorage(message);
@@ -34,11 +36,12 @@ function createMessageBlock(message) {
     time.className = "message-time";
     time.innerText = message.time;
     
-    const status = document.createElement("div");
-    status.className = "message-status";
-    status.innerHTML = '<span class="material-icons">done_all</span>';
+    const status = document.createElement("span");
+    status.className = "material-icons message-status";
+    status.innerText = "done_all";
 
     const info = document.createElement("div");
+    info.className = "message-info"
     info.append(...[time, status]);
 
     messageBlock.append(...[text, info]);

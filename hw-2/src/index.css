@@ -71,9 +71,11 @@ header button:hover {
 .chat {
     display: flex;
     flex-grow: 1;
-    background-color: #F5F5F5;
     flex-direction: column-reverse;
-    padding: 15px;
+    background-color: #F5F5F5;
+    padding: 20px;
+    flex-basis: 200px;
+    row-gap: 5px;
     overflow-y: auto;
 }
 
@@ -82,12 +84,30 @@ header button:hover {
     flex-direction: column;
     border-radius: 10px;
     border: 1px solid #DADADA;
-    width: fit-content;
     padding: 10px;
+    min-width: 100px;
+    word-break: break-word;
+    row-gap: 10px;
 }
 
 .message-text {
     font-size: 16px;
+}
+
+.message-info {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 5px;
+}
+
+.message-time {
+    font-size: 13px;
+    color: #666067;
+    padding-top: 7px;
+}
+
+.message-status {
+    color: #8E24AA;
 }
 
 .left-side {
