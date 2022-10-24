@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Send a message</title>
+        <link rel="stylesheet" href="./index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <button class="back-button">
+                <span class="material-icons">arrow_back</span>
+            </button>
+            <div class="profile">
+                <img class="profile-avatar" src="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg">
+                <div class="profile-info">
+                    <span class="profile-name">Дженнифер</span>
+                    <span class="profile-last-seen">был(-а) 2 часа назад</span>
+                </div>
+            </div>
+            <button class="search-button">
+                <span class="material-icons">search</span>
+            </button>
+            <button class="more-button">
+                <span class="material-icons">more_vert</span>
+            </button>
+        </header>
+        <div class="chat">
+            <div class="message left-side">
+                <span class="message-text">Привет, Иван</span>
+                <div class="message-info">
+                    <span class="message-time">14:22</span>
+                </div>
+            </div>
+        </div>
+        <form class="form" action="/">
+            <input class="form-input" name="message-text" placeholder="Сообщение" type="text">
+            <button class="attach-button" type="button">
+                <span class="material-icons">attachment</span>
+            </button>
+        </form>
+        <script src="./index.js"></script>
+    </body>
+</html>

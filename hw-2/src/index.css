@@ -1,0 +1,153 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: #8E24AA;
+    display: flex;
+    flex-basis: 80px;
+}
+
+header button {
+    background-color: #8E24AA;
+    color: white;
+    border: 0;
+    flex-basis: 80px;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding-left: 20px;
+    column-gap: 20px;
+    cursor: pointer;
+}
+
+.profile:hover,
+header button:hover {
+    background: #731f8a;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.profile-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.profile-last-seen {
+    color: #E79EFC;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.chat {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+    background-color: #F5F5F5;
+    padding: 20px;
+    flex-basis: 200px;
+    row-gap: 5px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #DADADA;
+    padding: 10px;
+    min-width: 100px;
+    word-break: break-word;
+    row-gap: 10px;
+}
+
+.message-text {
+    font-size: 16px;
+}
+
+.message-info {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 5px;
+}
+
+.message-time {
+    font-size: 13px;
+    color: #666067;
+    padding-top: 7px;
+}
+
+.message-status {
+    color: #8E24AA;
+}
+
+.left-side {
+    background: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.right-side {
+    background: #F3E5F5;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.form {
+    display: flex;
+    flex-basis: 60px;
+    border: 1px solid #DADADA;
+}
+
+.form-input {
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+    padding: 10px 0px 10px 20px;
+    font-size: 16px;
+}
+
+.attach-button {
+    border: 0;
+    background: white;
+    color: #777777;
+    cursor: pointer;
+    flex-basis: 80px;
+}
+
+.attach-button:hover {
+    color: #8E24AA;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
