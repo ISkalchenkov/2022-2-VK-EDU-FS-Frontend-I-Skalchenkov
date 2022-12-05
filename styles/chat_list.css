@@ -17,21 +17,17 @@ body {
 }
 
 header {
-    background-color: #8A23A7;
+    background-color: #8E24AA;
     display: flex;
     flex-basis: 80px;
 }
 
 header button {
-    background-color: #8A23A7;
+    background-color: #8E24AA;
     color: white;
     border: 0;
     flex-basis: 80px;
     cursor: pointer;
-}
-
-header button:hover {
-    background: #570B6D;
 }
 
 .page-title {
@@ -55,15 +51,6 @@ header button:hover {
     background-color: white;
     flex-basis: 80px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.chat:hover {
-    background-color: #F5F5F5;
-}
-
-.chat:active {
-    background-color: #e7c2f1;
 }
 
 .chat-avatar {
@@ -114,11 +101,11 @@ header button:hover {
 
 .message-status {
     font-size: 22px;
-    color: #8A23A7;
+    color: #8E24AA;
 }
 
 .unread-messages-number {
-    background-color: #8A23A7;
+    background-color: #8E24AA;
     color: white;
     font-size: 14px;
     text-align: center;
@@ -134,31 +121,7 @@ header button:hover {
     position: absolute;
     right: 20px;
     bottom: 20px;
-    background-color: rgb(243, 206, 83);
-    color: #493c14;
+    background-color: #f3ce53;
     cursor: pointer;
-    animation: pulse 3s infinite;
-    transition: transform 0.1s;
 }
 
-.create-chat-button:hover {
-    transform: scale(1.1);
-    animation: none;
-}
-
-.create-chat-button:active {
-    transform: scale(1);
-}
-
-@keyframes pulse {
-    from {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 1),
-        0 0 0 0 rgba(243, 206, 83, 1);
-    }
-  
-    to {
-      box-shadow: 0 0 0 5px rgba(255, 255, 255, 1),
-        0 0 0 20px rgba(243, 206, 83, 0);
-    }
-  }
-  

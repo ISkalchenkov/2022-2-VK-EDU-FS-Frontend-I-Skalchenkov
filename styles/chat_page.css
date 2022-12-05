@@ -17,13 +17,13 @@ body {
 }
 
 header {
-    background-color: #8A23A7;
+    background-color: #8E24AA;
     display: flex;
     flex-basis: 80px;
 }
 
 header button {
-    background-color: #8A23A7;
+    background-color: #8E24AA;
     color: white;
     border: 0;
     flex-basis: 80px;
@@ -39,14 +39,9 @@ header button {
     cursor: pointer;
 }
 
-.profile,
-header button {
-    transition: background-color 0.7s;
-}
-
 .profile:hover,
 header button:hover {
-    background-color: #570B6D;
+    background: #731f8a;
 }
 
 .profile-avatar {
@@ -88,7 +83,7 @@ header button:hover {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 1px solid #ceb6cefb;
+    border: 1px solid #DADADA;
     padding: 10px;
     min-width: 100px;
     word-break: break-word;
@@ -112,46 +107,21 @@ header button:hover {
 }
 
 .message-status {
-    color: #8A23A7;
+    color: #8E24AA;
 }
 
 .left-side {
     background: white;
     align-self: flex-start;
     border-bottom-left-radius: 0;
-    animation: left-scaling 0.5s;
 }
 
 .right-side {
     background: #F3E5F5;
     align-self: flex-end;
     border-bottom-right-radius: 0;
-    animation: right-scaling 0.5s;
 }
 
-@keyframes right-scaling {
-    from {
-      transform: scale(0);
-      transform-origin: bottom right;
-    }
-  
-    to {
-      transform: scale(1);
-      transform-origin: bottom right;
-    }
-  }
-
-  @keyframes left-scaling {
-    from {
-      transform: scale(0);
-      transform-origin: bottom left;
-    }
-  
-    to {
-      transform: scale(1);
-      transform-origin: bottom left;
-    }
-  }
 .form {
     display: flex;
     flex-basis: 60px;
@@ -172,15 +142,10 @@ header button:hover {
     color: #777777;
     cursor: pointer;
     flex-basis: 80px;
-    transition: color 0,3s;
 }
 
 .attach-button:hover {
-    color: #8A23A7;
-}
-
-.attach-button:active {
-    opacity: 0.7;
+    color: #8E24AA;
 }
 
 input[type=submit] {
