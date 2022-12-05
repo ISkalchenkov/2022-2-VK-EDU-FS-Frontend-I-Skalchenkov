@@ -18,10 +18,15 @@
     color: #777777;
     cursor: pointer;
     flex-basis: 80px;
+    transition: color 0,3s;
 }
 
 .attach-button:hover {
-    color: #8E24AA;
+    color: #8A23A7;
+}
+
+.attach-button:active {
+    opacity: 0.7;
 }
 
 input[type=submit] {

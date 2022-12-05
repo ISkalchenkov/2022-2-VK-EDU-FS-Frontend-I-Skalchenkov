@@ -1,15 +1,19 @@
 header {
-    background-color: #8E24AA;
+    background-color: #8A23A7;
     display: flex;
     flex-basis: 80px;
 }
 
 header button {
-    background-color: #8E24AA;
+    background-color: #8A23A7;
     color: white;
     border: 0;
     flex-basis: 80px;
     cursor: pointer;
+}
+
+header button:hover {
+    background: #570B6D;
 }
 
 .page-title {

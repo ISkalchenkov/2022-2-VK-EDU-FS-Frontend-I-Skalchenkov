@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 1px solid #DADADA;
+    border: 1px solid #ceb6cefb;
     padding: 10px;
     min-width: 100px;
     word-break: break-word;
@@ -37,17 +37,43 @@
 }
 
 .message-status {
-    color: #8E24AA;
+    color: #8A23A7;
 }
 
 .left-side {
     background: white;
     align-self: flex-start;
     border-bottom-left-radius: 0;
+    animation: left-scaling 0.5s;
 }
 
 .right-side {
     background: #F3E5F5;
     align-self: flex-end;
     border-bottom-right-radius: 0;
+    animation: right-scaling 0.5s;
 }
+
+@keyframes right-scaling {
+    from {
+      transform: scale(0);
+      transform-origin: bottom right;
+    }
+  
+    to {
+      transform: scale(1);
+      transform-origin: bottom right;
+    }
+  }
+
+  @keyframes left-scaling {
+    from {
+      transform: scale(0);
+      transform-origin: bottom left;
+    }
+  
+    to {
+      transform: scale(1);
+      transform-origin: bottom left;
+    }
+  }
