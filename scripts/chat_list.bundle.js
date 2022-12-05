@@ -81,31 +81,64 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./scripts/chat_list.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./index.css":
-/*!*******************!*\
-  !*** ./index.css ***!
-  \*******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./index.css?");
-
-/***/ }),
-
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
+/***/ "./scripts/chat_list.js":
+/*!******************************!*\
+  !*** ./scripts/chat_list.js ***!
+  \******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\nvar form = document.querySelector(\"form\");\nvar input = document.querySelector(\".form-input\");\nvar chat = document.querySelector(\".chat\");\nform.addEventListener(\"submit\", handleSubmit.bind(undefined));\ndocument.addEventListener(\"DOMContentLoaded\", getMessagesFromLocalStorage.bind(undefined));\nfunction handleSubmit(event) {\n  event.preventDefault();\n  if (!input.value) {\n    return;\n  }\n  var now = new Date();\n  var hours = now.getHours();\n  var minutes = (\"0\" + now.getMinutes()).slice(-2);\n  var message = {\n    \"text\": input.value,\n    \"time\": \"\".concat(hours, \":\").concat(minutes),\n    \"sender\": \"Ivan\"\n  };\n  createMessageBlock(message);\n  saveMessageToLocalStorage(message);\n  input.value = \"\";\n}\nfunction createMessageBlock(message) {\n  var messageBlock = document.createElement(\"div\");\n  messageBlock.className = \"message right-side\";\n  var text = document.createElement(\"span\");\n  text.className = \"message-text\";\n  text.innerText = message.text;\n  var time = document.createElement(\"span\");\n  time.className = \"message-time\";\n  time.innerText = message.time;\n  var status = document.createElement(\"span\");\n  status.className = \"material-icons message-status\";\n  status.innerText = \"done_all\";\n  var info = document.createElement(\"div\");\n  info.className = \"message-info\";\n  info.append.apply(info, [time, status]);\n  messageBlock.append.apply(messageBlock, [text, info]);\n  chat.prepend(messageBlock);\n}\nfunction getMessagesFromLocalStorage() {\n  var count = Number(localStorage.getItem(\"count\"));\n  if (!count) return;\n  for (var i = 1; i <= count; i++) {\n    var message = localStorage.getItem(i);\n    createMessageBlock(JSON.parse(message));\n  }\n}\nfunction saveMessageToLocalStorage(message) {\n  var count = Number(localStorage.getItem(\"count\")) || 0;\n  count++;\n  localStorage.setItem(count, JSON.stringify(message));\n  localStorage.setItem(\"count\", count);\n}\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/main.css */ \"./styles/main.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_main_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_chat_list_header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/chat_list/header.css */ \"./styles/chat_list/header.css\");\n/* harmony import */ var _styles_chat_list_header_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_chat_list_header_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_chat_list_chatlist_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/chat_list/chatlist.css */ \"./styles/chat_list/chatlist.css\");\n/* harmony import */ var _styles_chat_list_chatlist_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_chat_list_chatlist_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _styles_chat_list_create_chat_button_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/chat_list/create_chat_button.css */ \"./styles/chat_list/create_chat_button.css\");\n/* harmony import */ var _styles_chat_list_create_chat_button_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_chat_list_create_chat_button_css__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\nvar chat = document.querySelector(\".chat\");\nchat.addEventListener(\"click\", openChatPage);\nfunction openChatPage() {\n  window.location.replace(\"chat_page.html\");\n}\n\n//# sourceURL=webpack:///./scripts/chat_list.js?");
+
+/***/ }),
+
+/***/ "./styles/chat_list/chatlist.css":
+/*!***************************************!*\
+  !*** ./styles/chat_list/chatlist.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/chat_list/chatlist.css?");
+
+/***/ }),
+
+/***/ "./styles/chat_list/create_chat_button.css":
+/*!*************************************************!*\
+  !*** ./styles/chat_list/create_chat_button.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/chat_list/create_chat_button.css?");
+
+/***/ }),
+
+/***/ "./styles/chat_list/header.css":
+/*!*************************************!*\
+  !*** ./styles/chat_list/header.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/chat_list/header.css?");
+
+/***/ }),
+
+/***/ "./styles/main.css":
+/*!*************************!*\
+  !*** ./styles/main.css ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/main.css?");
 
 /***/ })
 
