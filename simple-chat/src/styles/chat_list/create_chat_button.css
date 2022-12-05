@@ -6,6 +6,31 @@
     position: absolute;
     right: 20px;
     bottom: 20px;
-    background-color: #f3ce53;
+    background-color: rgb(243, 206, 83);
+    color: #493c14;
     cursor: pointer;
+    animation: pulse 3s infinite;
+    transition: transform 0.1s;
 }
+
+.create-chat-button:hover {
+    transform: scale(1.1);
+    animation: none;
+}
+
+.create-chat-button:active {
+    transform: scale(1);
+}
+
+@keyframes pulse {
+    from {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 1),
+        0 0 0 0 rgba(243, 206, 83, 1);
+    }
+  
+    to {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 1),
+        0 0 0 20px rgba(243, 206, 83, 0);
+    }
+  }
+  

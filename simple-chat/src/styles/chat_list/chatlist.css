@@ -11,6 +11,15 @@
     background-color: white;
     flex-basis: 80px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat:hover {
+    background-color: #F5F5F5;
+}
+
+.chat:active {
+    background-color: #e7c2f1;
 }
 
 .chat-avatar {
@@ -61,11 +70,11 @@
 
 .message-status {
     font-size: 22px;
-    color: #8E24AA;
+    color: #8A23A7;
 }
 
 .unread-messages-number {
-    background-color: #8E24AA;
+    background-color: #8A23A7;
     color: white;
     font-size: 14px;
     text-align: center;
