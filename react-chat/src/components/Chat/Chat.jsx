@@ -6,7 +6,7 @@ import DoneAllIcon from "@mui/icons-material/DoneAll";
 export default function Chat({messages}) {
     const jennifer_message = (
         <Message
-            message_text={"Иван, привет"}
+            message_text={"Привет, Иван"}
             message_time={"12:34"}
             is_right_side={false}
         />

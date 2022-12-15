@@ -16,8 +16,8 @@ export default function PageChatList(props) {
                     chat_title={"Дженнифер"}
                     last_message={"Привет, Иван"}
                     img_path={"https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"}
-                    last_messages_time={"11:47"}
-                    unread_message_number={1}
+                    last_message_time={"12:34"}
+                    unread_messages_number={1}
                 />
                 <ChatListElement
                     onClick={() => {}}
