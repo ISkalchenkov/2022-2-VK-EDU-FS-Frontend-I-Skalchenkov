@@ -1,0 +1,43 @@
+.form {
+    display: flex;
+    height: 60px;
+    border: 1px solid #DADADA;
+}
+
+.formInput {
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+    padding: 10px 0px 10px 20px;
+    font-size: 16px;
+}
+
+.formInput::placeholder {
+    color: #777777;
+}
+
+.attachButton {
+    border: 0;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777777;
+    cursor: pointer;
+    margin: 13px;
+    flex-basis: 34px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.attachButton:hover {
+    color: #8A23A7;
+}
+
+.attachButton:active {
+    background-color: #F3E5F5;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
