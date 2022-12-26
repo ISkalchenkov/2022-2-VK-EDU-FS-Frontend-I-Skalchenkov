@@ -1,0 +1,25 @@
+.changesAppliedMsg {
+    display: flex;
+    background-color: #C5F386;
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.checkIcon {
+    height: 50px;
+    margin: 20px 10px 20px 20px;
+}
+
+.checkIcon svg {
+    font-size: 50px;
+    color: #8A23A7;
+}
+
+.msgText {
+    color: #8A23A7;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 20px 20px 10px;
+}

@@ -26,7 +26,7 @@ function saveMessageToLocalStorage(message) {
     localStorage.setItem("message_count", ++message_count);
 }
 
-export default function PageChat(props) {
+export default function PageChat() {
     const [messages, setMessages] = useState(getMessagesFromLocalStorage())
     const [text, setText] = useState('')
 
@@ -52,18 +52,17 @@ export default function PageChat(props) {
     return (
         <React.Fragment>
             <ChatHeader
-                onClick={props.onClick}
-                img_path={"https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"}
-                profile_name={"Дженнифер"}
-                profile_last_seen={"был(-а) 2 часа назад"}
+                img_path="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"
+                profile_name="Дженнифер"
+                profile_last_seen="был(-а) 2 часа назад"
             />
             <Chat messages={messages} />
             <Form
                 onSubmit={handleSubmit}
                 onChange={handleChange}
                 value={text}
-                name={"message_text"}
-                placeholder={"Напишите сообщение..."}
+                name="message_text"
+                placeholder="Напишите сообщение..."
             />
         </React.Fragment>
     );

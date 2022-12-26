@@ -1,0 +1,45 @@
+.header {
+    background-color: #8A23A7;
+    display: flex;
+    height: 80px;
+}
+
+.buttonLink {
+    display: flex;
+    flex-basis: 80px;
+}
+
+.backButton,
+.doneButton {
+    background-color: #8A23A7;
+    color: white;
+    border: 0;
+    flex-basis: 80px;
+    cursor: pointer;
+    transition: background-color 0.7s, color 0.2s;
+}
+
+.backButton:hover,
+.doneButton:hover {
+    background-color: #570B6D;
+}
+
+.backButton:active,
+.doneButton:active {
+    color: #EA81AF;
+}
+
+.pageTitle {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.pageTitle h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+}
