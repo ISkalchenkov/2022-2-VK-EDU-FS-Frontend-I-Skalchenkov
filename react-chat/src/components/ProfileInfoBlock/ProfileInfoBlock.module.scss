@@ -1,0 +1,55 @@
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.borderBlock {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #d8d2d2;
+    background-color: #F5F5F5;
+}
+
+.blockTitle {
+    margin: 10px 20px 5px 20px;
+    font-size: 14px;
+    color: #4e464e;
+}
+
+.blockHint {
+    background-color: white;
+    font-size: 14px;
+    margin: 5px 20px 5px 20px;
+    color: #4e464e;
+}
+
+.inputField {
+    display: flex;
+    align-items: flex-start;
+    margin: 5px 20px 10px 20px;
+    font-size: 16px;
+}
+
+.input {
+    font-size: 16px;
+    background-color: #F5F5F5;
+    outline: none;
+    border: none;
+    padding: 0;
+    resize: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.inputGrow {
+    flex-grow: 1;
+}
+
+.input::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}

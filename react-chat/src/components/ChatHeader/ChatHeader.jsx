@@ -1,16 +1,19 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./ChatHeader.module.scss";
 
 
-export default function ChatHeader({onClick, img_path, profile_name, profile_last_seen}) {
+export default function ChatHeader({img_path, profile_name, profile_last_seen}) {
     return (
         <header className={styles.header}>
-            <button className={styles.backButton} onClick={onClick}>
-                <ArrowBackIcon />
-            </button>
+            <Link to="/chats" className={styles.buttonLink}>
+                <button className={styles.backButton}>
+                    <ArrowBackIcon />
+                </button>
+            </Link>
             <div className={styles.profile}>
                 <img className={styles.profileAvatar} src={img_path} alt="profile_avatar"/>
                 <div className={styles.profileInfo}>

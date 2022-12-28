@@ -1,0 +1,32 @@
+.profileAvatar {
+    display: flex;
+    background: grey;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.cameraIcon {
+    position: absolute;
+    color: white;
+    height: 24px;
+    width: 24px;
+    scale: 1.25;
+    transition: transform 0.2s;
+}
+
+.profileAvatar:hover .cameraIcon {
+    transform: scale(1.25);
+}
+
+.profileAvatar:active .cameraIcon{
+    transform: scale(1);
+}
