@@ -12,7 +12,9 @@ export default function PageTranslate() {
                 to="/history"
                 title="Translate"
             />
-            <TranslatorForm />
+            <div>
+                <TranslatorForm />
+            </div>
         </React.Fragment>
     );
 }
