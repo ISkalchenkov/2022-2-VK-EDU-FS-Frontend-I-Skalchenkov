@@ -1,4 +1,4 @@
-import React, from "react";
+import React from "react";
 import Header from "../../components/Header/Header";
 import TranslatorForm from "../../components/TranslatorForm/TranslatorForm";
 import HistoryIcon from '@mui/icons-material/History';
