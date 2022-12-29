@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TranslatorForm.module.scss";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 
-export default function TranslatorForm({}) {
+export default function TranslatorForm() {
     return (
         <div className={styles.translatorForm}>
             <div className={styles.langsPanel}>
