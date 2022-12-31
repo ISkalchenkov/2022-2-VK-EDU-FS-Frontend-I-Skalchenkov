@@ -1,28 +1,38 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./TranslatorForm.module.scss";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
+import classnames from "classnames";
 
 
-export default function TranslatorForm({onChange, src_text, dst_text}) {
+export default function TranslatorForm({onChange, langs_list, src_text, dst_text, src_lang,
+        dst_lang, detected_lang, handleReverse, handleSrcLangChange, handleDstLangChange}) {
+
+    const selectedButton = classnames(styles.squareButton, styles.selected);
+    const [autodetection, setAutodetection] = useState(false);
     return (
         <div className={styles.translatorForm}>
             <div className={styles.langsPanel}>
                 <div className={styles.srcButtons}>
-                    <button className={styles.squareButton}>DETECT LANGUAGE</button>
-                    <button className={styles.squareButton}>РУССКИЙ</button>
-                    <button className={styles.svgButton}>
-                        <KeyboardArrowDownIcon />
+                    <button
+                        className={autodetection ? selectedButton : styles.squareButton}
+                        onClick={() => setAutodetection(true)}
+                    >{!autodetection || !detected_lang ? "Определить язык" : (detected_lang + " (Определен автоматически)")}
                     </button>
+                    <button
+                        className={!autodetection ? selectedButton : styles.squareButton}
+                        onClick={() => setAutodetection(false)}
+                    >{src_lang}
+                    </button>
+                    <DropdownMenu langs_list={langs_list} onClick={handleSrcLangChange} />
                 </div>
-                <button className={styles.svgButton}>
+                <button className={styles.svgButton} onClick={handleReverse}>
                     <SwapHorizIcon />
                 </button>
                 <div className={styles.dstButtons}>
-                    <button className={styles.squareButton}>АНГЛИЙСКИЙ</button>
-                    <button className={styles.svgButton}>
-                        <KeyboardArrowDownIcon />
-                    </button>
+                    <button className={selectedButton}>{dst_lang}</button>
+                    <DropdownMenu langs_list={langs_list} onClick={handleDstLangChange} />
                 </div>
             </div>
             <div className={styles.textBlock}>

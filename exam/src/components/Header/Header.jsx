@@ -11,7 +11,7 @@ export default function Header({ButtonIcon, to, title}) {
                     <ButtonIcon />
                 </button>
             </Link>
-            <span className={styles.title}>{title}</span>
+            <span  onClick={(e) => console.log(e.target.innerText)} className={styles.title}>{title}</span>
         </header>
     );
 }
