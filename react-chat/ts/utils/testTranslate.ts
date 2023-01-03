@@ -1,7 +1,7 @@
 import { translate, cachedTranslate, types } from "./TranslateUtils";
 
 const params1: types.ITranslateParams = {
-    text: "Shimba limba",
+    text: "Schimba limba",
     dstLang: "ru"
 }
 
