@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, {useState, useEffect} from "react";
 import ChatHeader from "../../components/ChatHeader/ChatHeader";
-import Chat from "../../components/Chat/Chat";
+import PublicChat from "../../components/Chat/PublicChat";
 import Form from "../../components/Form/Form";
 
 
-export default function PageChat() {
+export default function PagePublicChat() {
     const [messages, setMessages] = useState([]);
-    const [text, setText] = useState('');
+    const [text, setText] = useState("");
 
     function getMessages() {
-        fetch("/chats/1/messages/")
+        fetch("https://tt-front.vercel.app/messages")
             .then(response => response.json())
             .then(data => setMessages(data))
     }
@@ -22,7 +22,7 @@ export default function PageChat() {
             },
             body: JSON.stringify(message)
         }
-        const response = await fetch("/chats/1/messages/", options);
+        const response = await fetch("https://tt-front.vercel.app/message", options);
         const data = await response.json()
         return data;
     }
@@ -38,14 +38,13 @@ export default function PageChat() {
         event.preventDefault();
         if (text === "")
             return;
-        const message ={
-            body: text,
-            chat: 1,
-            sender: 2,
+        const message = {
+            text: text,
+            author: "Ivan Skalchenkov"
         };
         const created_message = await sendMessage(message);
-        if (created_message.id > messages[messages.length-1].id) { // если id созданного свежее, чем последний имеющийся
-            setMessages(messages.concat(created_message));             // то добавляем сообщение в список
+        if (created_message.timestamp > messages[messages.length-1].timestamp) { // если timestamp созданного свежее, чем последний имеющийся
+            setMessages(messages.concat(created_message));                       // то добавляем сообщение в список
         }
         setText("");
     }
@@ -57,11 +56,10 @@ export default function PageChat() {
     return (
         <React.Fragment>
             <ChatHeader
-                img_path="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"
-                profile_name="Дженнифер"
-                profile_last_seen="был(-а) 2 часа назад"
+                img_path="https://sun9-88.userapi.com/impg/PMVnO7ExY9bFZWjvX87pc1Th8R1ehp0Jl_H0Uw/nfmb-1ytTfo.jpg?size=360x360&quality=96&sign=3679c4dd5ed51e6e2c82dcd38a707726&type=album"
+                profile_name="Общий чат"
             />
-            <Chat messages={messages} />
+            <PublicChat messages={messages} />
             <Form
                 onSubmit={handleSubmit}
                 onChange={handleChange}
