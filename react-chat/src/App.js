@@ -8,19 +8,26 @@ import PageProfile from './pages/PageProfile/PageProfile';
 import PageLogin from './pages/PageLogin/PageLogin';
 
 
-function if_allowed(Page) {
+function is_logged_in() {
     let req = new XMLHttpRequest();
     req.open('GET', '/is_logged_in/', false); // Вьюха возвращает {'logged_in': true}, если пользователь авторизован
     req.send();
+    if (req.status === 200) {
+        const response = JSON.parse(req.responseText);
+        return response.logged_in;
+    }
+    return false
+}
 
-    const response = JSON.parse(req.responseText);
-    if (response.logged_in && Page === PageLogin) {
+function if_allowed(Page) {
+    const logged_in = is_logged_in();
+    if (logged_in && Page === PageLogin) {
         return <Navigate to="/chats" />
     }
-    if (!response.logged_in && Page === PageLogin) {
+    if (!logged_in && Page === PageLogin) {
         return <PageLogin />
     }
-    if (response.logged_in) {
+    if (logged_in) {
         return <Page />
     }
     return <Navigate to="/login" />
