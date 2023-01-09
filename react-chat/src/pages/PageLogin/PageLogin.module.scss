@@ -1,0 +1,62 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #8A23A7;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px
+}
+
+.logo {
+    display: flex;
+    flex-grow: 1;
+    height: 92px;
+}
+
+.socialContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.socialButton {
+    display: flex;
+    align-items: center;
+    background-color: #F44336;
+    border: none;
+    border-radius: 10px;
+    height: 60px;
+    padding: 0;
+    transition: background-color 0.7s;
+    cursor: pointer;
+}
+
+.socialButton:hover {
+    background-color: #C53126;
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: white;
+    background-color: #C53126;
+    padding: 0px 18px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.socialName {
+    color: white;
+    padding: 0px 10px;
+    font-size: 20px;
+    font-weight: 800;
+}

@@ -1,0 +1,22 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #8A23A7;
+
+}
+
+.errorContent {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+
+.errorMessage {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    white-space: pre-wrap;
+}

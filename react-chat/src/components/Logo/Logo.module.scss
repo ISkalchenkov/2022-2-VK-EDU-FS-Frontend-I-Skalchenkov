@@ -1,0 +1,43 @@
+.logo {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.logo span {
+    position: absolute;
+    margin: 0;
+}
+
+.logo span:nth-child(1) {
+    color: white;
+}
+
+.logo span:nth-child(2) {
+    opacity: 1;
+    color: #9C7FD6;
+    animation: wave 3s ease-in-out infinite;
+}
+
+.logo span:nth-child(3) {
+    color: #9C7FD6;
+    opacity: 0.5;
+    animation: wave 4s ease-in-out infinite;
+}
+
+.logo span:nth-child(4) {
+    color: #9C7FD6;
+    opacity: 0.5;
+    animation: wave 6s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        clip-path: polygon(0 29%, 10% 34%, 18% 43%, 25% 54%, 34% 62%, 46% 66%, 61% 65%, 76% 60%, 88% 56%, 100% 57%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 60%, 10% 67%, 20% 68%, 29% 62%, 38% 53%, 49% 48%, 60% 45%, 75% 42%, 88% 43%, 100% 48%, 100% 100%, 0 100%);
+    }
+}
