@@ -53,6 +53,11 @@ export default function PagePublicChat() {
         setText(event.target.value)
     }
 
+    function onClickEmoji(name) {
+        const emoji_code = `:${name}:`;
+        setText(text + emoji_code);
+    }
+
     return (
         <React.Fragment>
             <ChatHeader
@@ -63,6 +68,7 @@ export default function PagePublicChat() {
             <Form
                 onSubmit={handleSubmit}
                 onChange={handleChange}
+                onClickEmoji={onClickEmoji}
                 value={text}
                 name="message_text"
                 placeholder="Напишите сообщение..."

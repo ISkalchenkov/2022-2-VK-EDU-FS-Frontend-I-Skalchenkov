@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styles from "./ChatListElement.module.scss";
-
+import parseEmojis from "../../utils/parsers/parseEmojis";
 
 export default function ChatListElement({chat_title, img_path, last_message, last_message_time, unread_messages_number, to, Status}) {
     let status;
@@ -19,7 +19,7 @@ export default function ChatListElement({chat_title, img_path, last_message, las
                 </div>
                 <div className={styles.chatInfo}>
                     <span className={styles.chatTitle}>{chat_title}</span>
-                    <span className={styles.lastMessage}>{last_message}</span>
+                    <span className={styles.lastMessage}>{parseEmojis(last_message)}</span>
                 </div>
                 <div className={styles.chatMeta}>
                     <span className={styles.lastMessageTime}>{last_message_time}</span>

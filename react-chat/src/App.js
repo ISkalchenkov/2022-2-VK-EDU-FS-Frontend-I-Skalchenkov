@@ -43,8 +43,7 @@ class App extends React.Component {
             })
             .then(data => this.setState({logged_in: data.logged_in}),
                 error => this.setState({error: error.message})
-            )
-            
+            )       
     }
 
     render() {
