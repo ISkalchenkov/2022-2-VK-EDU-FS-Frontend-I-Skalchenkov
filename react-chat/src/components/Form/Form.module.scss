@@ -8,7 +8,7 @@
     flex-grow: 1;
     border: 0;
     outline: none;
-    padding: 10px 0px 10px 20px;
+    padding: 10px;
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -22,7 +22,8 @@
     sans-serif;
 }
 
-.attachButton {
+.button {
+    width: 34px;
     border: 0;
     background: white;
     border-radius: 50%;
@@ -31,19 +32,66 @@
     align-items: center;
     color: #777777;
     cursor: pointer;
-    margin: 13px;
+    margin: 13px 5px;
+    padding: 5px 1px;
     flex-basis: 34px;
     transition: background-color 0.2s, color 0.2s;
 }
 
-.attachButton:hover {
+.button:hover {
     color: #8A23A7;
 }
 
-.attachButton:active {
+.button:active {
     background-color: #F3E5F5;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownContent {
+    bottom: 65px;
+    right: 12px;
+    position: absolute;
+    display: none;
+}
+
+.appear {
+    display: block;
+    animation: appear .5s;
+}
+
+.disappear {
+    display: block;
+    animation: disappear .5s;
 }
 
 input[type=submit] {
     visibility: collapse;
+}
+
+@keyframes appear {
+    from {
+      transform: scale(0);
+      transform-origin: bottom right;
+    }
+  
+    to {
+      transform: scale(1);
+      transform-origin: bottom right;
+    }
+}
+
+@keyframes disappear {
+    from {
+      transform: scale(1);
+      transform-origin: bottom right;
+    }
+  
+    to {
+      transform: scale(0);
+      transform-origin: bottom right;
+    }
 }

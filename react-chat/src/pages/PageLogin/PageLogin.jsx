@@ -1,12 +1,11 @@
-import React from "react";
-import styles from "./PageLogin.module.scss";
-import Logo from "../../components/Logo/Logo";
-import GoogleIcon from "@mui/icons-material/Google";
+import React from 'react'
+import styles from './PageLogin.module.scss'
+import Logo from '../../components/Logo/Logo'
+import GoogleIcon from '@mui/icons-material/Google'
 
-export default function PageLogin() {
- 
-    function handleClick() {
-        window.location.replace("http://localhost:8000/social-auth/login/google-oauth2/");
+export default function PageLogin () {
+    function handleClick () {
+        window.location.replace('http://localhost:8000/social-auth/login/google-oauth2/')
     }
 
     return (
@@ -14,10 +13,10 @@ export default function PageLogin() {
             <div className={styles.login}>
                 <div className={styles.contentContainer}>
                     <div className={styles.logo}>
-                        <Logo fontSize="80px" fontWeight="500" />
+                        <Logo fontSize='80px' fontWeight='500' />
                     </div>
                     <div className={styles.socialContainer}>
-                        <button className={styles.socialButton} onClick={handleClick}>
+                        <button className={styles.socialButton} onClick={handleClick} aria-label='Login with Google'>
                             <span className={styles.socialIcon}>
                                 <GoogleIcon />
                             </span>
@@ -28,5 +27,5 @@ export default function PageLogin() {
 
             </div>
         </React.Fragment>
-    );
+    )
 }

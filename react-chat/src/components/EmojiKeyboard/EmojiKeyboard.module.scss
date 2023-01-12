@@ -1,0 +1,155 @@
+.emojiKeyboard {
+    display: flex;
+    background-color: #c0b0e0;
+    border-radius: 15px;
+}
+
+.keyboardContent {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-around;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+
+.emojiContainer {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.emojiContainer:hover {
+    background-color: #9C7FD6;
+}
+
+.emoji {
+    height: 18px;
+    width: 18px;
+    background-size: 18px;
+}
+
+.angel {
+    background: url("../../assets/emojis/angel.png?sprite");
+    background-size: 18px;
+}
+
+.angry {
+    background: url("../../assets/emojis/angry.png?sprite");
+    background-size: 18px;
+}
+
+.clown {
+    background: url("../../assets/emojis/clown.png?sprite");
+    background-size: 18px;
+}
+
+.confusion {
+    background: url("../../assets/emojis/confusion.png?sprite");
+    background-size: 18px;
+}
+
+.cool {
+    background: url("../../assets/emojis/cool.png?sprite");
+    background-size: 18px;
+}
+
+.crab {
+    background: url("../../assets/emojis/crab.png?sprite");
+    background-size: 18px;
+}
+
+.devil {
+    background: url("../../assets/emojis/devil.png?sprite");
+    background-size: 18px;
+}
+
+.dissapointment {
+    background: url("../../assets/emojis/dissapointment.png?sprite");
+    background-size: 18px;
+}
+
+.flame {
+    background: url("../../assets/emojis/flame.png?sprite");
+    background-size: 18px;
+}
+
+.ghost {
+    background: url("../../assets/emojis/ghost.png?sprite");
+    background-size: 18px;
+}
+
+.laughing {
+    background: url("../../assets/emojis/laughing.png?sprite");
+    background-size: 18px;
+}
+
+.loudlaughing {
+    background: url("../../assets/emojis/loudlaughing.png?sprite");
+    background-size: 18px;
+}
+
+.lion {
+    background: url("../../assets/emojis/lion.png?sprite");
+    background-size: 18px;
+}
+
+.monster {
+    background: url("../../assets/emojis/monster.png?sprite");
+    background-size: 18px;
+}
+
+.party {
+    background: url("../../assets/emojis/party.png?sprite");
+    background-size: 18px;
+}
+
+.pray {
+    background: url("../../assets/emojis/pray.png?sprite");
+    background-size: 18px;
+}
+
+.reversedsmile {
+    background: url("../../assets/emojis/reversedsmile.png?sprite");
+    background-size: 18px;
+}
+
+.russia {
+    background: url("../../assets/emojis/russia.png?sprite");
+    background-size: 18px;
+}
+
+.sad {
+    background: url("../../assets/emojis/sad.png?sprite");
+    background-size: 18px;
+}
+
+.serious {
+    background: url("../../assets/emojis/serious.png?sprite");
+    background-size: 18px;
+}
+
+.skull {
+    background: url("../../assets/emojis/skull.png?sprite");
+    background-size: 18px;
+}
+
+.smiling {
+    background: url("../../assets/emojis/smiling.png?sprite");
+    background-size: 18px;
+}
+
+.smilingwithhearts {
+    background: url("../../assets/emojis/smilingwithhearts.png?sprite");
+    background-size: 18px;
+}
+
+.thumbsdown {
+    background: url("../../assets/emojis/thumbsdown.png?sprite");
+    background-size: 18px;
+}
+
+.thumbsup {
+    background: url("../../assets/emojis/thumbsup.png?sprite");
+    background-size: 18px;
+}

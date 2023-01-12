@@ -23,10 +23,10 @@
     transition: transform 0.2s;
 }
 
-.profileAvatar:hover .cameraIcon {
+.profileAvatar:hover > .cameraIcon {
     transform: scale(1.25);
 }
 
-.profileAvatar:active .cameraIcon{
+.profileAvatar:active > .cameraIcon{
     transform: scale(1);
 }

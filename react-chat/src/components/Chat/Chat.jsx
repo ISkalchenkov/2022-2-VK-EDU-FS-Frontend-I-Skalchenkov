@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "./Chat.module.scss";
-import Message from "../Message/Message";
-import DoneAllIcon from "@mui/icons-material/DoneAll";
-import formatTime from "../../utils/formatTime";
+import React from 'react'
+import styles from './Chat.module.scss'
+import Message from '../Message/Message'
+import DoneAllIcon from '@mui/icons-material/DoneAll'
+import formatTime from '../../utils/formatTime'
+import PropTypes from 'prop-types'
 
-
-export default function Chat({messages}) {
+export default function Chat ({ messages }) {
     return (
         <div className={styles.chat}>
-            {messages.slice().reverse().map(message => 
+            {messages.slice().reverse().map(message =>
                 <Message
                     message_text={message.body}
                     message_time={formatTime(message.created_at)}
@@ -18,5 +18,9 @@ export default function Chat({messages}) {
                 />
             )}
         </div>
-    );
+    )
+}
+
+Chat.propTypes = {
+    messages: PropTypes.array
 }
