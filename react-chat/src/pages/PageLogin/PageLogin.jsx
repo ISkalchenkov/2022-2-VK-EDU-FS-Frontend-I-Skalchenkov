@@ -13,10 +13,10 @@ export default function PageLogin () {
             <div className={styles.login}>
                 <div className={styles.contentContainer}>
                     <div className={styles.logo}>
-                        <Logo fontSize="80px" fontWeight="500" />
+                        <Logo fontSize='80px' fontWeight='500' />
                     </div>
                     <div className={styles.socialContainer}>
-                        <button className={styles.socialButton} onClick={handleClick}>
+                        <button className={styles.socialButton} onClick={handleClick} aria-label='Login with Google'>
                             <span className={styles.socialIcon}>
                                 <GoogleIcon />
                             </span>

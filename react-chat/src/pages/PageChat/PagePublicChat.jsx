@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ChatHeader from '../../components/ChatHeader/ChatHeader'
 import PublicChat from '../../components/Chat/PublicChat'
 import Form from '../../components/Form/Form'
+import publicChatAvatar from '../../assets/avatars/public_chat.jpg'
 
 export default function PagePublicChat () {
     const [messages, setMessages] = useState([])
@@ -59,8 +60,8 @@ export default function PagePublicChat () {
     return (
         <React.Fragment>
             <ChatHeader
-                img_path="https://sun9-88.userapi.com/impg/PMVnO7ExY9bFZWjvX87pc1Th8R1ehp0Jl_H0Uw/nfmb-1ytTfo.jpg?size=360x360&quality=96&sign=3679c4dd5ed51e6e2c82dcd38a707726&type=album"
-                profile_name="Общий чат"
+                img_path={publicChatAvatar}
+                profile_name='Общий чат'
             />
             <PublicChat messages={messages} />
             <Form
@@ -68,8 +69,8 @@ export default function PagePublicChat () {
                 onChange={handleChange}
                 onClickEmoji={onClickEmoji}
                 value={text}
-                name="message_text"
-                placeholder="Напишите сообщение..."
+                name='message_text'
+                placeholder='Напишите сообщение...'
             />
         </React.Fragment>
     )

@@ -6,28 +6,28 @@
     margin: 0;
 }
 
-.logo span {
+.logoText {
     position: absolute;
     margin: 0;
 }
 
-.logo span:nth-child(1) {
+.logoText:nth-child(1) {
     color: white;
 }
 
-.logo span:nth-child(2) {
+.logoText:nth-child(2) {
     opacity: 1;
     color: #9C7FD6;
     animation: wave 3s ease-in-out infinite;
 }
 
-.logo span:nth-child(3) {
+.logoText:nth-child(3) {
     color: #9C7FD6;
     opacity: 0.5;
     animation: wave 4s ease-in-out infinite;
 }
 
-.logo span:nth-child(4) {
+.logoText:nth-child(4) {
     color: #9C7FD6;
     opacity: 0.5;
     animation: wave 6s ease-in-out infinite;

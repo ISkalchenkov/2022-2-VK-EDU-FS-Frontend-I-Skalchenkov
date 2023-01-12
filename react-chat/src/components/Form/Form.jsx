@@ -30,7 +30,7 @@ export default function Form ({ onSubmit, onChange, onClickEmoji, name, placehol
 
     return (
         <form className={styles.form} onSubmit={onSubmit}>
-            <button className={styles.button} type="button">
+            <button className={styles.button} type='button' aria-label='Attach file'>
                 <AttachmentIcon />
             </button>
             <input
@@ -45,12 +45,12 @@ export default function Form ({ onSubmit, onChange, onClickEmoji, name, placehol
                 <div className={classNames(styles.dropdownContent, visibility)}>
                     <EmojiKeyboard emojis={EMOJIS} onClickEmoji={onClickEmoji} />
                 </div>
-                <button className={styles.button} type="button">
+                <button className={styles.button} type='button' aria-label='Emojis'>
                     <SentimentSatisfiedAltIcon />
                 </button>
             </div>
 
-            <button className={styles.button} type="button">
+            <button className={styles.button} type='button' aria-label='Record audio'>
                 <MicIcon />
             </button>
         </form>

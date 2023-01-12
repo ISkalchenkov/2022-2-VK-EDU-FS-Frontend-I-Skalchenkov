@@ -5,6 +5,7 @@ import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 import ProfileAvatar from '../../components/ProfileAvatar/ProfileAvatar'
 import ProfileInfoBlock from '../../components/ProfileInfoBlock/ProfileInfoBlock'
 import ChangesAppliedMsg from '../../components/ChangesAppliedMsg/ChangesAppliedMsg'
+import userAvatar from '../../assets/avatars/user.jpg'
 
 function getProfileInfo () {
     const fullname = localStorage.getItem('fullname') || ''
@@ -40,40 +41,40 @@ export default function PageProfile () {
             <ProfileHeader onClick={handleClick} />
             <div className={style.profileInfo}>
                 <ProfileAvatar
-                    img_path="https://i.pinimg.com/originals/a6/f4/90/a6f490d623675643c480ad2925c182cd.jpg"
+                    img_path={userAvatar}
                 />
                 {changeStatus && <ChangesAppliedMsg />}
                 <ProfileInfoBlock
                     onChange={event => setFullname(event.target.value)}
                     title="Full name"
                     value={fullname}
-                    placeholder="Введите ваше имя..."
-                    input_type="text"
+                    placeholder='Введите ваше имя...'
+                    input_type='text'
                     InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setUsername(event.target.value)}
-                    title="Username"
+                    title='Username'
                     value={username}
-                    value_decorator="@"
-                    hint="Минимальная длина 5 символов"
-                    placeholder="username"
-                    input_type="text"
+                    value_decorator='@'
+                    hint='Минимальная длина 5 символов'
+                    placeholder='username'
+                    input_type='text'
                     InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setBirthday(event.target.value)}
-                    title="Birthday"
+                    title='Birthday'
                     value={birthday}
-                    input_type="date"
+                    input_type='date'
                     InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setBio(event.target.value)}
-                    title="Bio"
+                    title='Bio'
                     value={bio}
-                    hint="Расскажите о себе"
-                    placeholder="Краткая информация..."
+                    hint='Расскажите о себе'
+                    placeholder='Краткая информация...'
                     InputTag={TextareaAutosize}
                 />
             </div>

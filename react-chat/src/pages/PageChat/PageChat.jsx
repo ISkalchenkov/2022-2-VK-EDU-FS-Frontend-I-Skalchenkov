@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ChatHeader from '../../components/ChatHeader/ChatHeader'
 import Chat from '../../components/Chat/Chat'
 import Form from '../../components/Form/Form'
+import jenniferAvatar from '../../assets/avatars/jennifer.jpg'
 
 export default function PageChat () {
     const [messages, setMessages] = useState([])
@@ -60,9 +61,9 @@ export default function PageChat () {
     return (
         <React.Fragment>
             <ChatHeader
-                img_path="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"
-                profile_name="Дженнифер"
-                profile_last_seen="был(-а) 2 часа назад"
+                img_path={jenniferAvatar}
+                profile_name='Дженнифер'
+                profile_last_seen='был(-а) 2 часа назад'
             />
             <Chat messages={messages} />
             <Form
@@ -70,8 +71,8 @@ export default function PageChat () {
                 onChange={handleChange}
                 onClickEmoji={onClickEmoji}
                 value={text}
-                name="message_text"
-                placeholder="Напишите сообщение..."
+                name='message_text'
+                placeholder='Напишите сообщение...'
             />
         </React.Fragment>
     )

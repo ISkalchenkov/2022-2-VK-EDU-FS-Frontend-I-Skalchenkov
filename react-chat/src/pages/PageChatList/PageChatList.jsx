@@ -5,6 +5,8 @@ import CreateChatButton from '../../components/CreateChatButton/CreateChatButton
 import styles from './PageChatList.module.scss'
 import DoneAllIcon from '@mui/icons-material/DoneAll'
 import formatTime from '../../utils/formatTime'
+import jenniferAvatar from '../../assets/avatars/jennifer.jpg'
+import publicChatAvatar from '../../assets/avatars/public_chat.jpg'
 
 export default function PageChatList () {
     const [lastMessage, setLastMessage] = useState({})
@@ -41,20 +43,20 @@ export default function PageChatList () {
             <ChatListHeader />
             <div className={styles.chatList}>
                 <ChatListElement
-                    chat_title="Дженнифер"
+                    chat_title='Дженнифер'
                     last_message={lastMessage.body}
-                    img_path="https://i.pinimg.com/564x/f4/e3/c8/f4e3c8040039ef05b3edb01da3c01721.jpg"
+                    img_path={jenniferAvatar}
                     last_message_time={formatTime(lastMessage.created_at)}
                     Status={DoneAllIcon}
-                    to="/chats/1"
+                    to='/chats/1'
                 />
                 <ChatListElement
-                    chat_title="Общий чат"
+                    chat_title='Общий чат'
                     last_message={lastPublicMessage.text}
-                    img_path="https://sun9-88.userapi.com/impg/PMVnO7ExY9bFZWjvX87pc1Th8R1ehp0Jl_H0Uw/nfmb-1ytTfo.jpg?size=360x360&quality=96&sign=3679c4dd5ed51e6e2c82dcd38a707726&type=album"
+                    img_path={publicChatAvatar}
                     last_message_time={formatTime(lastPublicMessage.timestamp)}
                     Status={DoneAllIcon}
-                    to="/public_chat"
+                    to='/public_chat'
                 />
             </div>
             <CreateChatButton />

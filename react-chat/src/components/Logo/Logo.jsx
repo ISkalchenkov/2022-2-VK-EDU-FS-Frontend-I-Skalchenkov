@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 export default function Logo ({ fontSize, fontWeight }) {
     return (
         <div className={styles.logo} style={{ fontSize, fontWeight }}>
-            <span>Messenger</span>
-            <span>Messenger</span>
-            <span>Messenger</span>
-            <span>Messenger</span>
+            <span className={styles.logoText}>Messenger</span>
+            <span className={styles.logoText}>Messenger</span>
+            <span className={styles.logoText}>Messenger</span>
+            <span className={styles.logoText}>Messenger</span>
         </div>
     )
 }

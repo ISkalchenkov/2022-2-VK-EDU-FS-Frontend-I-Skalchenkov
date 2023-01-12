@@ -21,28 +21,28 @@ export default function ChatListHeader () {
     return (
         <header className={styles.header}>
             <div className={styles.dropdown}>
-                <button className={styles.button} onClick={handleMenuClick}>
+                <button className={styles.button} onClick={handleMenuClick} aria-label='Menu'>
                     <MenuIcon />
                 </button>
                 <div
                     className={styles.dropdownContent}
                     style={menuOpened ? { display: 'block' } : {}}>
-                    <Link to="/profile" >
-                        <button className={styles.button}>
+                    <Link to='/profile' aria-label='Go to profile page'>
+                        <button className={styles.button} aria-label='Profile'>
                             <AccountCircleIcon />
                         </button>
                     </Link>
-                    <button className={styles.button} onClick={handleLogoutClick}>
+                    <button className={styles.button} onClick={handleLogoutClick} aria-label='Logout'>
                         <LogoutIcon />
                     </button>
                 </div>
 
             </div>
             <div className={styles.pageTitle} >
-                <Logo fontSize="35px" fontWeight="500" />
+                <Logo fontSize='35px' fontWeight='500' />
             </div>
 
-            <button className={styles.button}>
+            <button className={styles.button} aria-label='Search chat'>
                 <SearchIcon/>
             </button>
         </header>

@@ -13,10 +13,10 @@ export default function ChatListElement ({ chat_title, img_path, last_message, l
     }
 
     return (
-        <Link to={to} style={{ textDecoration: 'none' }}>
+        <Link to={to} style={{ textDecoration: 'none' }} aria-label={'Go to chat: ' + chat_title}>
             <div className={styles.chat}>
                 <div className={styles.chatAvatar}>
-                    <img className={styles.image} src={img_path} alt="chat_avatar" />
+                    <img className={styles.image} src={img_path} alt='chat_avatar' />
                 </div>
                 <div className={styles.chatInfo}>
                     <span className={styles.chatTitle}>{chat_title}</span>
@@ -33,7 +33,7 @@ export default function ChatListElement ({ chat_title, img_path, last_message, l
 
 ChatListElement.propTypes = {
     chat_title: PropTypes.string,
-    img_path: PropTypes.string,
+    img_path: PropTypes.any,
     last_message: PropTypes.string,
     last_message_time: PropTypes.string,
     unread_messages_number: PropTypes.number,

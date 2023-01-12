@@ -37,7 +37,7 @@
     background-color: #570B6D;
 }
 
-.profile:active .profileName,
+.profile:active > .profileName,
 .backButton:active,
 .searchButton:active,
 .moreButton:active {
@@ -61,11 +61,10 @@
     font-size: 20px;
     font-weight: 600;
     transition: color 0.2s;
-
 }
 
 .profileLastSeen {
-    color: #E79EFC;
+    color: #f5d9eb;
     font-size: 13px;
     font-weight: 400;
 }
