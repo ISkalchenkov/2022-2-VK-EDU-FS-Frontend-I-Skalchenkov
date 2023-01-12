@@ -1,18 +1,19 @@
-import React from "react";
-import {Link} from "react-router-dom";
-import styles from "./ChatListElement.module.scss";
-import parseEmojis from "../../utils/parsers/parseEmojis";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styles from './ChatListElement.module.scss'
+import parseEmojis from '../../utils/parsers/parseEmojis'
+import PropTypes from 'prop-types'
 
-export default function ChatListElement({chat_title, img_path, last_message, last_message_time, unread_messages_number, to, Status}) {
-    let status;
+export default function ChatListElement ({ chat_title, img_path, last_message, last_message_time, unread_messages_number, to, Status }) {
+    let status
     if (unread_messages_number) {
         status = <span className={styles.unreadMessagesNumber}>{unread_messages_number}</span>
     } else {
-        status = Status ? (<Status className={styles.messageStatus} />) : null;
+        status = Status ? (<Status className={styles.messageStatus} />) : null
     }
 
     return (
-        <Link to={to} style={{textDecoration: "none"}}>
+        <Link to={to} style={{ textDecoration: 'none' }}>
             <div className={styles.chat}>
                 <div className={styles.chatAvatar}>
                     <img className={styles.image} src={img_path} alt="chat_avatar" />
@@ -27,5 +28,15 @@ export default function ChatListElement({chat_title, img_path, last_message, las
                 </div>
             </div>
         </Link>
-    );
+    )
+}
+
+ChatListElement.propTypes = {
+    chat_title: PropTypes.string,
+    img_path: PropTypes.string,
+    last_message: PropTypes.string,
+    last_message_time: PropTypes.string,
+    unread_messages_number: PropTypes.number,
+    to: PropTypes.string,
+    Status: PropTypes.any
 }

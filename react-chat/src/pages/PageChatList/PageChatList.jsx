@@ -1,45 +1,45 @@
-import React, {useEffect, useState} from "react";
-import ChatListHeader from "../../components/ChatListHeader/ChatListHeader";
-import ChatListElement from "../../components/ChatListElem/ChatListElement";
-import CreateChatButton from "../../components/CreateChatButton/CreateChatButton";
-import styles from "./PageChatList.module.scss";
-import DoneAllIcon from "@mui/icons-material/DoneAll";
-import formatTime from "../../utils/formatTime";
+import React, { useEffect, useState } from 'react'
+import ChatListHeader from '../../components/ChatListHeader/ChatListHeader'
+import ChatListElement from '../../components/ChatListElem/ChatListElement'
+import CreateChatButton from '../../components/CreateChatButton/CreateChatButton'
+import styles from './PageChatList.module.scss'
+import DoneAllIcon from '@mui/icons-material/DoneAll'
+import formatTime from '../../utils/formatTime'
 
-export default function PageChatList() {
-    const [lastMessage, setLastMessage] = useState({});
-    const [lastPublicMessage, setLastPublicMessage] = useState({});
+export default function PageChatList () {
+    const [lastMessage, setLastMessage] = useState({})
+    const [lastPublicMessage, setLastPublicMessage] = useState({})
 
-    function getLastMessage() {
-        fetch("/chats/1/messages/")
+    function getLastMessage () {
+        fetch('/chats/1/messages/')
             .then(response => response.json())
-            .then(data => setLastMessage(data[data.length-1]))
+            .then(data => setLastMessage(data[data.length - 1]))
     }
 
-    function getLastPublicMessage() {
-        fetch("https://tt-front.vercel.app/messages")
+    function getLastPublicMessage () {
+        fetch('https://tt-front.vercel.app/messages')
             .then(response => response.json())
-            .then(data => setLastPublicMessage(data[data.length-1]))
+            .then(data => setLastPublicMessage(data[data.length - 1]))
     }
 
     useEffect(() => {
-        getLastMessage();
-        const timer_id = setInterval(getLastMessage, 1000); // Запуск поллинга с периодичностью в 1с
+        getLastMessage()
+        const timer_id = setInterval(getLastMessage, 1000) // Запуск поллинга с периодичностью в 1с
 
-        return () => {clearInterval(timer_id)} // освобождение ресурсов при размонтировании
-    }, []);
+        return () => { clearInterval(timer_id) } // освобождение ресурсов при размонтировании
+    }, [])
 
     useEffect(() => {
-        getLastPublicMessage();
-        const timer_id = setInterval(getLastPublicMessage, 1000); // Запуск поллинга с периодичностью в 1с
+        getLastPublicMessage()
+        const timer_id = setInterval(getLastPublicMessage, 1000) // Запуск поллинга с периодичностью в 1с
 
-        return () => {clearInterval(timer_id)} // освобождение ресурсов при размонтировании
-    }, []);
+        return () => { clearInterval(timer_id) } // освобождение ресурсов при размонтировании
+    }, [])
 
     return (
         <React.Fragment>
             <ChatListHeader />
-            <div className={styles.chatList}>              
+            <div className={styles.chatList}>
                 <ChatListElement
                     chat_title="Дженнифер"
                     last_message={lastMessage.body}
@@ -59,5 +59,5 @@ export default function PageChatList() {
             </div>
             <CreateChatButton />
         </React.Fragment>
-    );
+    )
 }

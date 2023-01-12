@@ -1,9 +1,8 @@
-import React from "react";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import styles from "./ChangesAppliedMsg.module.scss";
+import React from 'react'
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+import styles from './ChangesAppliedMsg.module.scss'
 
-
-export default function ChangesAppliedMsg() {
+export default function ChangesAppliedMsg () {
     return (
         <div className={styles.changesAppliedMsg}>
             <span className={styles.checkIcon} >
@@ -11,5 +10,5 @@ export default function ChangesAppliedMsg() {
             </span>
             <span className={styles.msgText}>Изменения сохранены</span>
         </div>
-    );
+    )
 }

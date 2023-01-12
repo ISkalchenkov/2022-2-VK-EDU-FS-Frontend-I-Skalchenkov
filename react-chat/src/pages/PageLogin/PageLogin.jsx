@@ -1,12 +1,11 @@
-import React from "react";
-import styles from "./PageLogin.module.scss";
-import Logo from "../../components/Logo/Logo";
-import GoogleIcon from "@mui/icons-material/Google";
+import React from 'react'
+import styles from './PageLogin.module.scss'
+import Logo from '../../components/Logo/Logo'
+import GoogleIcon from '@mui/icons-material/Google'
 
-export default function PageLogin() {
- 
-    function handleClick() {
-        window.location.replace("http://localhost:8000/social-auth/login/google-oauth2/");
+export default function PageLogin () {
+    function handleClick () {
+        window.location.replace('http://localhost:8000/social-auth/login/google-oauth2/')
     }
 
     return (
@@ -28,5 +27,5 @@ export default function PageLogin() {
 
             </div>
         </React.Fragment>
-    );
+    )
 }

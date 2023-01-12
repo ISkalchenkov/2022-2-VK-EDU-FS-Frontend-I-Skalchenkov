@@ -23,5 +23,5 @@ export const EMOJIS = [
     'smiling',
     'smilingwithhearts',
     'thumbsdown',
-    'thumbsup',
+    'thumbsup'
 ]

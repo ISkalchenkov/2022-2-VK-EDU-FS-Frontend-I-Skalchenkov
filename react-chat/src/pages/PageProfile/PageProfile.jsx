@@ -1,38 +1,38 @@
-import React, { useState } from "react";
-import { TextareaAutosize } from "@mui/material";
-import style from "./PageProfile.module.scss";
-import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
-import ProfileAvatar from "../../components/ProfileAvatar/ProfileAvatar";
-import ProfileInfoBlock from "../../components/ProfileInfoBlock/ProfileInfoBlock";
-import ChangesAppliedMsg from "../../components/ChangesAppliedMsg/ChangesAppliedMsg";
+import React, { useState } from 'react'
+import { TextareaAutosize } from '@mui/material'
+import style from './PageProfile.module.scss'
+import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
+import ProfileAvatar from '../../components/ProfileAvatar/ProfileAvatar'
+import ProfileInfoBlock from '../../components/ProfileInfoBlock/ProfileInfoBlock'
+import ChangesAppliedMsg from '../../components/ChangesAppliedMsg/ChangesAppliedMsg'
 
-function getProfileInfo() {
-    let fullname = localStorage.getItem("fullname") || "";
-    let username = localStorage.getItem("username") || "";
-    let birthday = localStorage.getItem("birthday") || "";
-    let bio = localStorage.getItem("bio") || "";
-    return [fullname, username, birthday, bio];
+function getProfileInfo () {
+    const fullname = localStorage.getItem('fullname') || ''
+    const username = localStorage.getItem('username') || ''
+    const birthday = localStorage.getItem('birthday') || ''
+    const bio = localStorage.getItem('bio') || ''
+    return [fullname, username, birthday, bio]
 }
 
-function saveProfileInfo(fullname, username, birthday, bio) {
-    localStorage.setItem("fullname", fullname);
-    localStorage.setItem("username", username);
-    localStorage.setItem("birthday", birthday);
-    localStorage.setItem("bio", bio);
+function saveProfileInfo (fullname, username, birthday, bio) {
+    localStorage.setItem('fullname', fullname)
+    localStorage.setItem('username', username)
+    localStorage.setItem('birthday', birthday)
+    localStorage.setItem('bio', bio)
 }
 
-export default function PageProfile() {
-    const profile_info = getProfileInfo();
-    const [fullname, setFullname] = useState(profile_info[0]);
-    const [username, setUsername] = useState(profile_info[1]);
-    const [birthday, setBirthday] = useState(profile_info[2]);
-    const [bio, setBio] = useState(profile_info[3]);
+export default function PageProfile () {
+    const profile_info = getProfileInfo()
+    const [fullname, setFullname] = useState(profile_info[0])
+    const [username, setUsername] = useState(profile_info[1])
+    const [birthday, setBirthday] = useState(profile_info[2])
+    const [bio, setBio] = useState(profile_info[3])
 
-    const [changeStatus, setChangeStatus] = useState(false);
+    const [changeStatus, setChangeStatus] = useState(false)
 
-    function handleClick() {
-        saveProfileInfo(fullname, username, birthday, bio);
-        setChangeStatus(true);
+    function handleClick () {
+        saveProfileInfo(fullname, username, birthday, bio)
+        setChangeStatus(true)
     }
 
     return (
@@ -49,7 +49,7 @@ export default function PageProfile() {
                     value={fullname}
                     placeholder="Введите ваше имя..."
                     input_type="text"
-                    InputTag={"input"}
+                    InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setUsername(event.target.value)}
@@ -59,14 +59,14 @@ export default function PageProfile() {
                     hint="Минимальная длина 5 символов"
                     placeholder="username"
                     input_type="text"
-                    InputTag={"input"}
+                    InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setBirthday(event.target.value)}
                     title="Birthday"
                     value={birthday}
                     input_type="date"
-                    InputTag={"input"}
+                    InputTag={'input'}
                 />
                 <ProfileInfoBlock
                     onChange={event => setBio(event.target.value)}
@@ -78,5 +78,5 @@ export default function PageProfile() {
                 />
             </div>
         </React.Fragment>
-    );
+    )
 }

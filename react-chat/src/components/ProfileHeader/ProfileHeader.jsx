@@ -1,11 +1,11 @@
-import React from "react";
-import {Link} from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import DoneIcon from "@mui/icons-material/Done";
-import styles from "./ProfileHeader.module.scss";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import DoneIcon from '@mui/icons-material/Done'
+import styles from './ProfileHeader.module.scss'
+import PropTypes from 'prop-types'
 
-
-export default function ProfileHeader({onClick}) {
+export default function ProfileHeader ({ onClick }) {
     return (
         <header className={styles.header}>
             <Link to="/chats" className={styles.buttonLink}>
@@ -20,5 +20,9 @@ export default function ProfileHeader({onClick}) {
                 <DoneIcon />
             </button>
         </header>
-    );
+    )
+}
+
+ProfileHeader.propTypes = {
+    onClick: PropTypes.func
 }
