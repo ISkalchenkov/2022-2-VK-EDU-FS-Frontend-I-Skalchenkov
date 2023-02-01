@@ -1,40 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { getMessages, sendMessage } from '../../actions/messages'
+import PropTypes from 'prop-types'
 import ChatHeader from '../../components/ChatHeader/ChatHeader'
 import Chat from '../../components/Chat/Chat'
 import Form from '../../components/Form/Form'
 import jenniferAvatar from '../../assets/avatars/jennifer.jpg'
 
-export default function PageChat () {
-    const [messages, setMessages] = useState([])
+function PageChat (props) {
     const [text, setText] = useState('')
 
-    function getMessages () {
-        fetch('/chats/1/messages/')
-            .then(response => response.json())
-            .then(data => setMessages(data))
-    }
-
-    async function sendMessage (message) {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(message)
-        }
-        const response = await fetch('/chats/1/messages/', options)
-        const data = await response.json()
-        return data
-    }
-
     useEffect(() => {
-        getMessages() // Отображение сообщений при монтировании страницы
-        const timer_id = setInterval(getMessages, 1000) // Запуск поллинга с периодичностью в 1с
+        props.getMessages() // Отображение сообщений при монтировании страницы
+        const timer_id = setInterval(props.getMessages, 1000) // Запуск поллинга с периодичностью в 1с
 
         return () => { clearInterval(timer_id) } // освобождение ресурсов при размонтировании
     }, [])
 
-    async function handleSubmit (event) {
+    function handleSubmit (event) {
         event.preventDefault()
         if (text === '') { return }
         const message = {
@@ -42,10 +25,7 @@ export default function PageChat () {
             chat: 1,
             sender: 2
         }
-        const created_message = await sendMessage(message)
-        if (created_message.id > messages[messages.length - 1].id) { // если id созданного свежее, чем последний имеющийся
-            setMessages(messages.concat(created_message)) // то добавляем сообщение в список
-        }
+        props.sendMessage(message)
         setText('')
     }
 
@@ -65,7 +45,7 @@ export default function PageChat () {
                 profile_name='Дженнифер'
                 profile_last_seen='был(-а) 2 часа назад'
             />
-            <Chat messages={messages} />
+            <Chat messages={props.messages} />
             <Form
                 onSubmit={handleSubmit}
                 onChange={handleChange}
@@ -77,3 +57,17 @@ export default function PageChat () {
         </React.Fragment>
     )
 }
+
+PageChat.propTypes = {
+    messages: PropTypes.array,
+    getMessages: PropTypes.func,
+    sendMessage: PropTypes.func
+}
+
+const mapStateToProps = (state) => {
+    return ({
+        messages: state.messages.messages
+    })
+}
+
+export default connect(mapStateToProps, { getMessages, sendMessage })(PageChat)

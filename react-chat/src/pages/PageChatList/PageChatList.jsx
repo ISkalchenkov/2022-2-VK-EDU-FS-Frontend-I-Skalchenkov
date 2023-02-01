@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { getMessages } from '../../actions/messages'
+import PropTypes from 'prop-types'
 import ChatListHeader from '../../components/ChatListHeader/ChatListHeader'
 import ChatListElement from '../../components/ChatListElem/ChatListElement'
 import CreateChatButton from '../../components/CreateChatButton/CreateChatButton'
@@ -8,15 +11,9 @@ import formatTime from '../../utils/formatTime'
 import jenniferAvatar from '../../assets/avatars/jennifer.jpg'
 import publicChatAvatar from '../../assets/avatars/public_chat.jpg'
 
-export default function PageChatList () {
-    const [lastMessage, setLastMessage] = useState({})
+function PageChatList (props) {
+    const { last_message, getMessages } = props
     const [lastPublicMessage, setLastPublicMessage] = useState({})
-
-    function getLastMessage () {
-        fetch('/chats/1/messages/')
-            .then(response => response.json())
-            .then(data => setLastMessage(data[data.length - 1]))
-    }
 
     function getLastPublicMessage () {
         fetch('https://tt-front.vercel.app/messages')
@@ -25,8 +22,8 @@ export default function PageChatList () {
     }
 
     useEffect(() => {
-        getLastMessage()
-        const timer_id = setInterval(getLastMessage, 1000) // Запуск поллинга с периодичностью в 1с
+        getMessages()
+        const timer_id = setInterval(getMessages, 1000) // Запуск поллинга с периодичностью в 1с
 
         return () => { clearInterval(timer_id) } // освобождение ресурсов при размонтировании
     }, [])
@@ -44,9 +41,9 @@ export default function PageChatList () {
             <div className={styles.chatList}>
                 <ChatListElement
                     chat_title='Дженнифер'
-                    last_message={lastMessage.body}
+                    last_message={last_message.body}
                     img_path={jenniferAvatar}
-                    last_message_time={formatTime(lastMessage.created_at)}
+                    last_message_time={formatTime(last_message.created_at)}
                     Status={DoneAllIcon}
                     to='/chats/1'
                 />
@@ -63,3 +60,14 @@ export default function PageChatList () {
         </React.Fragment>
     )
 }
+
+PageChatList.propTypes = {
+    last_message: PropTypes.object,
+    getMessages: PropTypes.func
+}
+
+const mapStateToProps = (state) => ({
+    last_message: state.messages.messages.at(-1)
+})
+
+export default connect(mapStateToProps, { getMessages })(PageChatList)
