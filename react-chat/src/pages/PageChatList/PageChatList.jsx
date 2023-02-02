@@ -41,9 +41,9 @@ function PageChatList (props) {
             <div className={styles.chatList}>
                 <ChatListElement
                     chat_title='Дженнифер'
-                    last_message={last_message.body}
+                    last_message={last_message?.body}
                     img_path={jenniferAvatar}
-                    last_message_time={formatTime(last_message.created_at)}
+                    last_message_time={formatTime(last_message?.created_at)}
                     Status={DoneAllIcon}
                     to='/chats/1'
                 />
